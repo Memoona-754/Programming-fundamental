@@ -8,3 +8,4 @@ int main ()
        printf("%f",z);
         return 0;
     }
+    //take float input and print the fractional part of the real number.
