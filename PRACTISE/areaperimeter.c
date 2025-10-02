@@ -8,15 +8,15 @@ write a program to find whether the area of a rectangle is
     int l;
     int b;
     printf("Enter length : ");
-    scanf("%d",l);
+    scanf("%d",&l);
     printf("Enter bredth : ");
-    scanf("%d",b);
+    scanf("%d",&b);
     int a = l*b;
     int p = 2*(l*b);
 
     if(a>p){
         printf("Area is greater");
-    }else if(a<p){
+    }else if(p>a){
         printf("Perimeter is greater");
     }else{
         printf("Area is equal to perimeter");
