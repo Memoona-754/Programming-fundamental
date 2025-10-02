@@ -9,7 +9,7 @@ int main()
     if(GB>=100){
         bill=GB*2;
         printf("Your bill is : ");
-    }else if(GB>=101 && GB<=200){
+    }else if((GB>=101) && (GB<=200)){
         bill=(GB*1.5)+(100*2); 
         printf("Your bill is : ");
     }else if(GB>=201 && GB<=400){
