@@ -9,15 +9,15 @@ b+c>a*/
 int main(){
     int a;
     printf("Enter your first side : ");
-    scanf("%d",a);
+    scanf("%d",&a);
 
     int b;
     printf("Enter your second side : ");
-    scanf("%d",b);
+    scanf("%d",&b);
 
     int c;
     printf("Enter your third side : ");
-    scanf("%d",c);
+    scanf("%d",&c);
 
     if((a+b)>c && (a+c)>b && (b+c)>a){
         printf("Valid trianglr");

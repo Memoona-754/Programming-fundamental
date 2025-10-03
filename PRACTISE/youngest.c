@@ -2,13 +2,13 @@
 int main(){
     int age1;
     printf("Enter age of Ali : ");
-    scanf("%d",age1);
+    scanf("%d",&age1);
     int age2;
     printf("\nEnter age of Ahad : ");
-    scanf("%d",age2);
+    scanf("%d",&age2);
     int age3;
     printf("\nEnter age of Ahmad : ");
-    scanf("%d",age3);
+    scanf("%d",&age3);
 
     if(age1<age3 && age1<age2 ){
         printf("Ali is youngeat");
