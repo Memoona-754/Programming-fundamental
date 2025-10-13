@@ -1,17 +1,3 @@
-/*#include<stdio.h>
-float main (){
-    int n;
-    printf("Enter a number : ");
-    scanf("%f",&n);
-
-    float a=100;
-    for(int  i= 1;i<=n;i++){
-     printf("%f  ",a);
-       a=(100/2);
-    }
-}*/
-
-
 #include <stdio.h>
 
 int main() {
