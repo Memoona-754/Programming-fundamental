@@ -8,7 +8,7 @@ int main(){
             if(j==3 || i==3){   //for n=5
                 printf("*");
             }else{
-                printf("#");
+                printf(" ");
             }
         }
         printf("\n");
