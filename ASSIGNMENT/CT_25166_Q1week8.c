@@ -10,4 +10,3 @@ int main(){
     }
     printf("The factorial  is : %d",product);
 }
-//5!=5*4*3*2*1
