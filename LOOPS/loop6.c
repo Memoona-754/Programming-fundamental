@@ -1,5 +1,5 @@
-/*two numbers are entered through the keyboard,write a program to find the value of one number raised to 
-the power of another number*/
+/*two numbers are entered through the keyboard,write a program to find the value of one 
+number raised to the power of another number*/
 
 #include<stdio.h>
 int main()
