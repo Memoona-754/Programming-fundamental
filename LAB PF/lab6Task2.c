@@ -36,6 +36,5 @@ int main()
     }
 
     printf("The %dth Fibonacci is : %d", n, sum);
-
     return 0;
 }
