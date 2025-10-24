@@ -1,19 +1,10 @@
 #include<stdio.h>
 int main(){
-    float Salary;
-    float taxrate;
-    float TaxAmount;
-    float netsalary;
+   int a,b;
+   printf("Enter two numbers : ");
+   scanf("%d %d",&a,&b);
 
-    printf("Enter your salary : ");
-    scanf("%f",&Salary);
-
-    printf("Enter taxrate : ");
-    scanf("%f",&taxrate);
-
-    TaxAmount=(Salary*taxrate)/100;
-
-    printf("\ntax to be paid : %f\n",TaxAmount);
-
+   int max = (a>b)?a:b;
+    printf("Maximum is %d\n",max);
     return 0;
 }

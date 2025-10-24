@@ -1,6 +1,15 @@
 #include <stdio.h>
-
 int main() {
-    printf("\a\a\a\a\a");  // 5 beep sounds
+     int num;
+   printf("Enter a number : ");
+   scanf("%d",&num);
+
+   if(num>0){
+    printf("Positive number");
+   }else if(num<0){
+   printf("negative number");
+  }else{
+    printf("Zero");
+  }
     return 0;
 }

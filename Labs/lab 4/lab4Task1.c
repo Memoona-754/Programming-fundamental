@@ -1,35 +1,23 @@
 #include<stdio.h>
 int main()
 {
-   int day;
-   printf("Enter a number (1-7) for day of the week");
-   scanf("%d",&day);
-   switch(day){
-    case 1:
-    printf("Sunday");
-    break;
-    case 2:
-    printf("Monday");
-    break;
-    case 3:
-    printf("Tuesday");
-    break;
-    case 4:
-    printf("Wednesday");
-    break;
-    case 5:
-    printf("Thursday");
-    break;
-    case 6:
-    printf("Friday");
-    break;
-    case 7:
-    printf("Saturday");
-    break;
-    default:
-    printf("Invalid input");
-   }
+    int GB;
+    float bill;
+    printf("Enter your GB : ");
+    scanf("%d",GB);
 
-
-
+    if(GB>=100){
+        bill=GB*2;
+        printf("Your bill is : ");
+    }else if((GB>=101) && (GB<=200)){
+        bill=(GB*1.5)+(100*2); 
+        printf("Your bill is : ");
+    }else if(GB>=201 && GB<=400){
+        bill=(GB*1)+(100*2)+(100*1.5);
+        printf("Your bill is : ");
+    }else if(GB>=401){
+        bill=(GB*0.5)+(100*2)+(100*1.5)+(200*1);
+        printf("Your bill is : ");
+    }
+    return 0;
 }

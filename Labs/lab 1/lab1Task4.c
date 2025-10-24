@@ -1,17 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    float height, width, totalBoards;
-
-    printf("Enter height of the bookcase (in feet): ");
-    scanf("%f", &height);
-
-    printf("Enter width of the bookcase (in feet): ");
-    scanf("%f", &width);
-
-    totalBoards = (2 * height) + (5 * width);
-
-    printf("\nTotal feet of 12-inch-wide boards needed: %f\n", totalBoards);
-
+    int a = 10, b = 5;
+    printf("Sum = %d\n",a+b);
+     printf("Difference = %d\n",a-b);
+      printf("Product = %d\n",a*b);
+       printf("Quotient = %d\n",a/b);
     return 0;
 }
