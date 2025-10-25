@@ -5,9 +5,7 @@ int main(){
     printf("S=1+");
     while(denominator<=400){
         sum+=1.0/denominator;
-        denominator+=4;
-       // printf("1/%d",denominator);
-        
+        denominator+=4;  
     }
     printf("Sum of series = %.6f\n",sum);
 
