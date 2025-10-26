@@ -12,7 +12,6 @@ int main() {
             smax = arr[i];
         }
     }
-
     printf("Max = %d, Second Max = %d", max, smax);
     return 0;
 }
