@@ -1,14 +1,11 @@
 #include <stdio.h>
-#include <string.h>   // Required for strncpy()
+#include <string.h> 
 
 int main() {
     char src[] = "Programming";
-    char dest[5];     // We want to copy only 4 characters + 1 for '\0'
+    char dest[5];     
 
-    // Copy first 4 characters
     strncpy(dest, src, 4);
-
-    // Manually add null terminator
     dest[4] = '\0';
 
     printf("Source string: %s\n", src);
