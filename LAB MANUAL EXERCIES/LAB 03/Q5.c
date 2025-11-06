@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main() {
     float principal, rate, time, interest;
-
     printf("Enter Principal amount (100 - 1000000 Rs): ");
     scanf("%f", &principal);
 
@@ -9,7 +8,6 @@ int main() {
         printf("Error: Principal must be between 100 and 1,000,000 Rs.\n");
         return 0;  
     }
-
     printf("Enter Rate of Interest (5 - 10 %%): ");
     scanf("%f", &rate);
 
@@ -17,7 +15,6 @@ int main() {
         printf("Error: Rate of Interest must be between 5%% and 10%%.\n");
         return 0;
     }
-
     printf("Enter Time period (1 - 10 years): ");
     scanf("%f", &time);
 
