@@ -68,6 +68,5 @@ int main() {
     if (percent_fat < 30.0) {
         printf("\n=> This food is considered LOW IN FAT (less than 30%% of total calories).\n");
     }
-
     return 0;
 }
