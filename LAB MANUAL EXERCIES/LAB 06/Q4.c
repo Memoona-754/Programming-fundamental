@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main() {
+int main(){
     char username[10], password[10];
     char u_input[10], p_input[10];
     int i, valid, digit, upper, lower;

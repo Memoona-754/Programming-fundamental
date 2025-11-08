@@ -72,7 +72,7 @@ void bookRoom(struct Room rooms[], int totalRooms) {
     printf("Enter the  Capacity: ");
     scanf("%d", &capacity);
     printf("Enter the  Guest Name: ");
-    scanf(" %[^\n]s",&guestName);
+    scanf(" %c[^\n]s",&guestName);
     printf("Enter the current day: ");
     scanf("%s",&day);
 //1. Loop through all rooms (for (int i = 0; i < totalRooms; i++)).
