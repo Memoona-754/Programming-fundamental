@@ -148,7 +148,7 @@ int main() {
     struct Room rooms[TOTAL_ROOMS];
 
     printf("\t\n====================================\n");
-    printf("\"HOTEL MANAGEMENT SYSTEM\"");
+    printf("      \"HOTEL MANAGEMENT SYSTEM\"");
     printf("\t\t\n====================================\n");
 
     // Initialize rooms with default values
