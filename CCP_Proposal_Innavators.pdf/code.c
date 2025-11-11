@@ -10,7 +10,7 @@ struct Room {
     char status[50]; // "Available" or "Occupied"
     char guest_name[50];
 };
-                                                                                                                                         
+
 // Function to display main menu
 void displayMenu() {
     //printf("\t\t\n====================================\n");
@@ -39,8 +39,8 @@ void displayRoomDetails(struct Room rooms[], int totalRooms) {
     //3. start_room: starting room number for the current type
     //4. i: outer loop index (iterates through all rooms)
     //5. j: inner loop index (iterates through rooms of the same type)
-for (int j = i; j < totalRooms; j++) {                             
-if (strcmp(rooms[j].room_type, current_type) == 0) {
+       for (int j = i; j < totalRooms; j++) {                             
+            if (strcmp(rooms[j].room_type, current_type) == 0) {
                 count++;
                 i++;             
             } else { 
@@ -72,7 +72,7 @@ void bookRoom(struct Room rooms[], int totalRooms) {
     printf("Enter the  Capacity: ");
     scanf("%d", &capacity);
     printf("Enter the  Guest Name: ");
-    scanf(" %c[^\n]s",&guestName);
+    scanf(" %[^\n]",&guestName);
     printf("Enter the current day: ");
     scanf("%s",&day);
 //1. Loop through all rooms (for (int i = 0; i < totalRooms; i++)).
@@ -204,7 +204,8 @@ int choice;
                 printf("Invalid Choice!\n");
                 break;
         }
-                                                                                                            
+           printf("\n");
     }
+
     return 0;
 }
