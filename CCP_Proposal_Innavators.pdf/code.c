@@ -179,23 +179,23 @@ int main() {
             // initializing rooms status 
     }
 
-int choice;
+char choice;
     while (1) {                              // used switch statement to handle the choice of the user 
         displayMenu();                       // calls display menu function to display main menu 
         printf("Enter Your Choice: ");
-        scanf("%d", &choice);
+        scanf("%c", &choice);
 
         switch (choice) {
-            case 1:
+            case '1':
             displayRoomDetails(rooms, TOTAL_ROOMS);      // calls display room details function in case 1 of main menu 
                 break;
-            case 2:
+            case '2':
             bookRoom(rooms, TOTAL_ROOMS);                // calls room booking function in case 2 of main menu 
                 break;
-            case 3:
+            case '3':
             checkOut(rooms, TOTAL_ROOMS);                // calls check out function in case 3 of main menu 
                 break;
-            case 4:
+            case '4':
                 printf("\n====================================\n");    
                 printf("   THANKS FOR VISITING OUR HOTEL.\n");
                 printf("====================================\n");
