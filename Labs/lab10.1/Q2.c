@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 void onlytype(int);
 int main()
 {
@@ -10,9 +10,4 @@ int main()
 void onlytype(int a)
 {
     printf("a is %d", a);
-}*/
-
-#include<stdio.h>
-int main(){
-    
 }
