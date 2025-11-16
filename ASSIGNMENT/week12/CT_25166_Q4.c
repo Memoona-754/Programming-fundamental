@@ -1,13 +1,12 @@
 #include <stdio.h>
 
-// Function that takes a char pointer and prints the character it points to
 void printChar(char *chPtr) {
-    printf("Character: %c\n", *chPtr); // Dereference pointer to get character
+    printf("Character: %c\n", *chPtr); 
 }
 
 int main() {
     char ch = 'M';
-    printChar(&ch); // Pass address of variable
+    printChar(&ch); 
 
     return 0;
 }
