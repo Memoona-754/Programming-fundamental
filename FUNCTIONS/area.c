@@ -5,7 +5,7 @@ int areaofrect(int length, int breadth){
     return area;
 }
 int main(){
-    int a=10, b=5;
-    int area = areaofrect(a,b);
+    int l=10, b=5;
+    int area = areaofrect(l,b);
     printf("%d\n",area);
 }
