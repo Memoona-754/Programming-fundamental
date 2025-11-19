@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
  #include <string.h>
  
 // Define structure for Room
@@ -74,7 +74,7 @@ void bookRoom(struct Room rooms[], int totalRooms) {
     printf("Enter the  Guest Name: ");
     scanf(" %[^\n]",&guestName);
     printf("Enter the current day: ");
-    scanf("%s", day);
+    scanf("%s",&day);
 //1. Loop through all rooms (for (int i = 0; i < totalRooms; i++)).
 //2. Check if:
     //- Room number matches user input (rooms[i].room_number == roomNumber).
@@ -179,32 +179,23 @@ int main() {
             // initializing rooms status 
     }
 
-int choice;
-int ch;
-while (1) {                              // used switch statement to handle the choice of the user 
-        displayMenu();  
-                 // calls display menu function to display main menu 
+char choice;
+    while (1) {                              // used switch statement to handle the choice of the user 
+        displayMenu();                       // calls display menu function to display main menu 
         printf("Enter Your Choice: ");
-        if (scanf("%d", &choice) != 1) {
-            // invalid input: clear and retry
-            while ((ch = getchar()) != '\n' && ch != EOF) {}
-            printf("Please enter a number.\n");
-            continue;
-        }
-        // clear leftover newline before any fgets or %[^\n] usage
-        while ((ch = getchar()) != '\n' && ch != EOF) {}
+        scanf("%c", &choice);
 
         switch (choice) {
-            case 1:
+            case '1':
             displayRoomDetails(rooms, TOTAL_ROOMS);      // calls display room details function in case 1 of main menu 
                 break;
-            case 2:
+            case '2':
             bookRoom(rooms, TOTAL_ROOMS);                // calls room booking function in case 2 of main menu 
                 break;
-            case 3:
+            case '3':
             checkOut(rooms, TOTAL_ROOMS);                // calls check out function in case 3 of main menu 
                 break;
-            case 4:
+            case '4':
                 printf("\n====================================\n");    
                 printf("   THANKS FOR VISITING OUR HOTEL.\n");
                 printf("====================================\n");

@@ -10,7 +10,7 @@ struct Room {
     char status[50]; // "Available" or "Occupied"
     char guest_name[50];
 };
-
+                                                                                                                                         
 // Function to display main menu
 void displayMenu() {
     //printf("\t\t\n====================================\n");
@@ -39,8 +39,8 @@ void displayRoomDetails(struct Room rooms[], int totalRooms) {
     //3. start_room: starting room number for the current type
     //4. i: outer loop index (iterates through all rooms)
     //5. j: inner loop index (iterates through rooms of the same type)
-       for (int j = i; j < totalRooms; j++) {                             
-            if (strcmp(rooms[j].room_type, current_type) == 0) {
+for (int j = i; j < totalRooms; j++) {                             
+if (strcmp(rooms[j].room_type, current_type) == 0) {
                 count++;
                 i++;             
             } else { 
@@ -72,9 +72,9 @@ void bookRoom(struct Room rooms[], int totalRooms) {
     printf("Enter the  Capacity: ");
     scanf("%d", &capacity);
     printf("Enter the  Guest Name: ");
-    scanf(" %[^\n]",&guestName);
+    scanf(" %[^\n]s",&guestName);
     printf("Enter the current day: ");
-    scanf("%s", day);
+    scanf("%s",&day);
 //1. Loop through all rooms (for (int i = 0; i < totalRooms; i++)).
 //2. Check if:
     //- Room number matches user input (rooms[i].room_number == roomNumber).
@@ -148,7 +148,7 @@ int main() {
     struct Room rooms[TOTAL_ROOMS];
 
     printf("\t\n====================================\n");
-    printf("      \"HOTEL MANAGEMENT SYSTEM\"");
+    printf("\"HOTEL MANAGEMENT SYSTEM\"");
     printf("\t\t\n====================================\n");
 
     // Initialize rooms with default values
@@ -180,19 +180,10 @@ int main() {
     }
 
 int choice;
-int ch;
-while (1) {                              // used switch statement to handle the choice of the user 
-        displayMenu();  
-                 // calls display menu function to display main menu 
+    while (1) {                              // used switch statement to handle the choice of the user 
+        displayMenu();                       // calls display menu function to display main menu 
         printf("Enter Your Choice: ");
-        if (scanf("%d", &choice) != 1) {
-            // invalid input: clear and retry
-            while ((ch = getchar()) != '\n' && ch != EOF) {}
-            printf("Please enter a number.\n");
-            continue;
-        }
-        // clear leftover newline before any fgets or %[^\n] usage
-        while ((ch = getchar()) != '\n' && ch != EOF) {}
+        scanf("%d", &choice);
 
         switch (choice) {
             case 1:
@@ -213,8 +204,7 @@ while (1) {                              // used switch statement to handle the 
                 printf("Invalid Choice!\n");
                 break;
         }
-           printf("\n");
+                                                                                                            
     }
-
     return 0;
 }

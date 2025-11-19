@@ -1,4 +1,4 @@
- #include <stdio.h>
+#include <stdio.h>
  #include <string.h>
  
 // Define structure for Room
@@ -25,7 +25,6 @@ void displayMenu() {
 // Function to display room details
 void displayRoomDetails(struct Room rooms[], int totalRooms) {
     printf("\nRoom Details:\n");
-    printf("==================================================================\n");
     printf("Room Type\t\tQuantity\tCapacity\tRate\n");
 
     char current_type[50];
