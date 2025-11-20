@@ -16,8 +16,9 @@ int main(){
     scanf("%f",&taxrate);
 
     TaxAmount=(Salary*taxrate)/100;
-
     printf("\ntax to be paid : %f\n",TaxAmount);
-
+    
+    netsalary = Salary-TaxAmount;
+    printf("The Net Salary is: %f",netsalary);
     return 0;
 }

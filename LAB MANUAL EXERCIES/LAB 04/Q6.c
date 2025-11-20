@@ -50,7 +50,6 @@ int main() {
     }
     
     // --- CALCULATION AND OUTPUT ---
-    
     // Calculate percentage if total calories is greater than 0.
     if (total_cal != 0) {
         // Formula: (Calories from fat / Total calories) * 100
