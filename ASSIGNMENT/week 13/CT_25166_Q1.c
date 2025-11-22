@@ -12,12 +12,11 @@ int main() {
         printf("Memory allocation failed\n");
         return 1;
     }
-    // Input array elements
     printf("Enter %d float values:\n", n);
     for (int i = 0; i < n; i++) {
         scanf("%f", &arr[i]);
     }
-    // Print the array
+   
     printf("The array elements are:\n");
     for (int i = 0; i < n; i++) {
         printf("%.2f ", arr[i]);

@@ -1,35 +1,32 @@
+/*Teacher asks the student to check whether the input number is divisible by 7 or not. For checking 
+the divisibility, take the last digit and double it, take the rest of the digits and subtract the 
+doubled last digit repeat until the result is 7, -7 or 0. For example: 
+10976 -> 1097-12 = 1085 -> 108-10 = 98 -> 9-16 = -7 
+49 -> 4 - 18 = 14 -> 1 - 8 = -7  */
+
 #include <stdio.h>
-int main() {
-    int n, last_digit, rest_of_digits;
-
-    printf("Enter an integer to check for divisibility by 7: ");
-    if (scanf("%d", &n) != 1) {
-        printf("Invalid input. Please enter an integer.\n");
-        return 1;
-    }
-    if (n < 0) {
-        n = -n;
-    }
-    int original_n = n; 
-    if (original_n == 0) {
-        printf("0 is divisible by 7.\n");
-        return 0;
-    }
-    while (n > 99) { 
-        last_digit = n % 10;
-        rest_of_digits = n / 10;
-        n = rest_of_digits - (last_digit * 2);
-        if (n < 0) {
-            n = -n;
-        }
-        printf("Next step: %d\n", n);
-    }
-    printf("Final check number: %d\n", n);
-    if (n % 7 == 0) {
-        printf("%d is divisible by 7.\n", original_n);
-    } else {
-        printf("%d is NOT divisible by 7.\n", original_n);
-    }
-
-    return 0;
+int main () {
+	int num ,originalnum ,extractdigit ,rest ; 
+	
+	printf("Input Number = "); 
+	scanf("%d" ,&num); 
+	
+	originalnum = num ; 
+	
+	while(num != 7 && num != -7 && num != 0){
+		extractdigit = num % 10; 
+		rest = num/10; 
+		rest = rest - extractdigit*2; 
+		num = rest; 
+	}
+	
+	if(num == 7 || num == -7){
+		printf("%d is divisible by 7." ,originalnum); 
+	}
+	else {
+		printf("%d is not divisible by 7." ,originalnum);
+	}
+	
+	
+	return 0; 
 }
