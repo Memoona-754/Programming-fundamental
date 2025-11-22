@@ -4,8 +4,8 @@ int main()
     float numarr[20];
     float *ptr = numarr;//pointer ptr points to first element of array
     int i;
-    printf("\n\t\t\t\t\tSecond Highest Number in Array!\n\n");
-    printf("Enter 20 float(decimal) numbers:\n");
+    //printf("\n\t\t\t\t\tSecond Highest Number in Array!\n\n");
+    //printf("Enter 20 float(decimal) numbers:\n");
     for (i = 0; i < 20; i++) 
 	{
         scanf("%f", ptr + i);//inputs 20 float numbers in array
@@ -28,4 +28,4 @@ int main()
 
     printf("Second highest number = %0.3f\n", secondhighest);
     return 0;
-}
+} 

@@ -1,4 +1,4 @@
-/*#include<stdio.h>
+#include<stdio.h>
 int main(){
     int n=40;
     double pi=0.0;
@@ -11,7 +11,8 @@ int main(){
         printf("%d\t%.6f\n",i,pi);
     }
      return 0;
-}*/
+}
+
 #include <stdio.h>
 
 int main() {
