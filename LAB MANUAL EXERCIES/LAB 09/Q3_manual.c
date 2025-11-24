@@ -1,26 +1,27 @@
 #include <stdio.h>
 
 float volumeCal(int h, int a) {
-    float volume;
-    volume = (1.0 / 3) * a * a * h;   // a^2 * h * 1/3
-    return volume;
+    return (a * a * h) / 3.0;
 }
 
 void getData(int h, int a) {
-    float result = volumeCal(h, a);   // call volume calculation function
-    printf("\nVolume = %.2f\n", result);
+    float V;
+
+    printf("Enter height: ");
+    scanf("%d", &h);
+
+    printf("Enter base: ");
+    scanf("%d", &a);
+
+    V = volumeCal(h, a);   // calling from inside getData()
+
+    printf("Volume = %.2f\n", V);
 }
 
 int main() {
     int h, a;
 
-    printf("Enter height (h): ");
-    scanf("%d", &h);
-
-    printf("Enter side length (a): ");
-    scanf("%d", &a);
-
-    getData(h, a);     // calling data function
+    getData(h, a);   // calling the first function
 
     return 0;
 }
