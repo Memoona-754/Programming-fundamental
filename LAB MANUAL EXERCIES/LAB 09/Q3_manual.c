@@ -21,7 +21,7 @@ void getData(int h, int a) {
 int main() {
     int h, a;
 
-    getData(h, a);   // calling the first function
+    getData( h,a);   // calling the first function
 
     return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-float roundTwoDecimal(float num) {
+float  roundTwoDecimal(float num) {
     int temp = num * 1000;   // move 3 decimals
 
     // Check 3rd decimal digit
