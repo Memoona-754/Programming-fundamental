@@ -19,9 +19,6 @@ int main() {
     for(i = 0; i < m; i++) {
         for(j = 0; j < n; j++) {
             scanf("%d", &matrix[i][j]);
-            if(matrix[i][j] == 0) {
-                countZero++;
-            }
         }
     }
 
@@ -30,6 +27,9 @@ int main() {
     for(i = 0; i < m; i++) {
         for(j = 0; j < n; j++) {
             printf("%d ", matrix[i][j]);
+             if(matrix[i][j] == 0) {
+                countZero++;
+            }
         }
         printf("\n");
     }
