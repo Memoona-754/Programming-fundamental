@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 // Function to display instructions
 void instructions() {
     printf("This program calculates the total cost of a house over 5 years.\n");

@@ -2,6 +2,10 @@
 
 // Function to check recruitment position
 void checkPosition(int marks) {
+
+     printf("Enter your test marks: ");
+    scanf("%d", &marks);
+
     int exp;
 
     if (marks < 50) {
@@ -30,9 +34,6 @@ void checkPosition(int marks) {
 
 int main() {
     int marks;
-
-    printf("Enter your test marks: ");
-    scanf("%d", &marks);
 
     checkPosition(marks);
 
