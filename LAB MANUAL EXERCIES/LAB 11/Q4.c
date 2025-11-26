@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+  
 int main() {
     float arr[20];
     float *ptr = arr;
