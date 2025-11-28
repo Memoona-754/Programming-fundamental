@@ -41,7 +41,6 @@
 // }
 
 #include <stdio.h>
-
 int main() {
     double pi = 0.0;
     double denom = 1.0;

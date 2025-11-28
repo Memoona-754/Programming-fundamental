@@ -1,92 +1,68 @@
-#include <stdio.h>
+#include<Stdio.h>
+int inputDimensions(int *r1, int *c1, int *r2, int *c2 ){
+	printf("Enter Rows & Columns for Matrix A:");
+	scanf("%d %d",r1,c1);
+	printf("Enter Rows & Columns for Matrix B:");
+	scanf("%d %d",r2,c2);
+	if(*c1!=*r2) return 0;
+	else return 1;
+}
+void inputMatrix(int matrix[10][10], int rows, int cols, char name){
+	printf("Enter elements of matrix %c(%dx%d)\n",name,rows,cols);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			printf("%c[%d][%d]=",name,i+1,j+1);
+			scanf("%d",&matrix[i][j]);
+		}
+	}
+}
+void multiplyMatrix(int a[10][10], int b[10][10], int c[10][10], int r1, int c1, int r2, int c2){
+	for(int i=0; i<r1; i++){
+		for(int j=0; j<c2; j++){
+			c[i][j]=0;
+			for(int k=0; k<c1; k++){
+				c[i][j]+=a[i][k]*b[k][j];
+			}
+		}
+	}
+}
+void transposeMatrix(int *rows, int *cols, int matrix[10][10],int T[10][10]){
+	for(int i=0; i<*rows; i++){
+		for(int j=0; j<*cols; j++){
+			T[j][i]=matrix[i][j];
+		}
+	}
+}
+void printMatrix(int matrix[10][10], int rows, int cols, char name[20]){
+	printf("%s Matrix:\n",name);
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			printf("%d ",matrix[i][j]);
+		}
+		printf("\n");
+	}
+}
+int main(){
+    int r1,c1,r2,c2;
 
-// Function declarations
-int inputdimensions(int *r1, int *c1, int *r2, int *c2);
-void inputMatrix(int matrix[10][10], int rows, int colms, char name);
-void multiplyMatrix(int a[10][10], int b[10][10], int c[10][10], int r1, int c1, int r2, int c2);
-void transposeMatrix(int src[10][10], int dst[10][10], int rows, int colms);
-void printMatrix(int matrix[10][10], int rows, int colms);
-
-int main() {
-     int r1,c1,r2,c2;
-
-    if (!inputdimensions(&r1, &c1, &r2, &c2)){
-        printf("Matrix multiplication is not possible\n");
+    if(!inputDimensions(&r1,&c1,&r2,&c2)){
+        printf("Matrix Multiplication not possible.");
         return 0;
     }
 
-    int a[10][10], b[10][10], c[10][10], t[10][10];
+    int a[10][10],b[10][10],c[10][10],T[10][10];
 
-    inputMatrix(a, r1, c1, 'A');
-    inputMatrix(b, r2, c2, 'B');
+    inputMatrix(a,r1,c1,'A');
+    inputMatrix(b,r2,c2,'B');
 
-    multiplyMatrix(a, b, c, r1, c1, r2, c2);
+    multiplyMatrix(a,b,c,r1,c1,r2,c2);
+    printMatrix(c,r1,c2,"Multiplied(AxB)");
 
-    /* c is r1 x c2; transpose into t which will be c2 x r1 */
-    transposeMatrix(c, t, r1, c2);
+    int tr = r1;   // rows of C
+    int tc = c2;   // cols of C
 
-    printMatrix(t, c2, r1);
+    transposeMatrix(&tr,&tc,c,T);
+    printMatrix(T, tc, tr, "Transposed");
 
-     return 0;
-}
-
-int inputdimensions(int *r1, int *c1, int *r2, int *c2){
-
-      printf("Enter rows and columns of Matrix A: ");
-      if (scanf("%d %d", r1, c1) != 2) return 0;
-      printf("Enter rows and columns of Matrix B: ");
-      if (scanf("%d %d", r2, c2) != 2) return 0;
-
-      /* For matrix multiplication A (r1 x c1) * B (r2 x c2), require c1 == r2 */
-      if (*c1 != *r2) {
-          /* Multiplication not possible */
-          return 0;
-      }
-      return 1;
-}
-
-void inputMatrix(int matrix[10][10],int rows, int colms,char name){
-    
-    printf("Enter elements of Matrix %c(%d %d)",name,rows,colms);
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<colms;j++){
-            printf("%c [%d][%d]",name,i+1,j+1);
-            scanf("%d",&matrix[i][j]);
-        }
-    }
-}
-
-void multiplyMatrix(int a[10][10], int b[10][10], int c[10][10], int r1, int c1, int r2, int c2) {
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c2; j++) {
-            c[i][j] = 0;
-        }
-    }
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c2; j++) {
-            for (int k = 0; k < c1; k++) {
-                c[i][j] += a[i][k] * b[k][j];
-            }
-        }
-    }
-}
-
-void transposeMatrix(int c[10][10], int t[10][10], int rows,int colms){
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<colms;j++){
-            t[j][i]=c[i][j];
-        }
-        // printf("The transpose of Multiplied Matrix is :");
-         //scanf("%d %d",&c2,&r1);
-    }
-}
-
-void printMatrix(int matrix[10][10], int rows, int colms){
-    printf("\nResultant Matrix (A x B):\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < colms; j++) {
-            printf("%5d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
+    return 0;
 }
