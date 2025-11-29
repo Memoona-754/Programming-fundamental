@@ -52,7 +52,7 @@ void multiplymatrix(int a[10][10],int b[10][10],int c[10][10],int r1 ,int c1,int
       for(int i=0;i<r1;i++){
         for(int j=0;j<c2;j++){
             c[i][j]=0;
-            for(int k=1;k<=c1;k++){
+            for(int k=0;k<c1;k++){
                 c[i][j]+=a[i][k]*b[k][j];
             }
         }
