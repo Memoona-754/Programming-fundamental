@@ -6,7 +6,7 @@ void minMax(int arr[],int len,int *min,int *max){
          if(arr[i]>*max){
             *max = arr[i];
          }
-         if(arr[i]<*min){
+         else  if(arr[i]<*min){
              *min = arr[i];
          } 
     }
