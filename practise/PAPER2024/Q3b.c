@@ -21,7 +21,7 @@ int main() {
     scanf("%s", str);
 
     if (is_palindrome(str))
-        printf("It IS a palindrome.\n");
+        printf("It is a palindrome.\n");
     else
         printf("It is NOT a palindrome.\n");
 
