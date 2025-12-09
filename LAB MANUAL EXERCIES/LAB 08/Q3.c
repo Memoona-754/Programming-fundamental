@@ -18,12 +18,12 @@ int main() {
     printf("Enter first string: ");
     fgets(str1,100, stdin);
     str1[strcspn(str1, "\n")] = '\0';   // Remove newline
-   // printf("%s",str1);
+    printf("%s\n",str1);
 
     printf("Enter second string: ");
     fgets(str2,100, stdin);
     str2[strcspn(str2, "\n")] = '\0';
-     //printf("%s",str1);
+     printf("%s\n",str1);
 
     // Compare using strcmp
     result = strcmp(str1, str2);
