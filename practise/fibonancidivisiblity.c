@@ -5,7 +5,7 @@ int main() {
     int sum3 = 0, sum5 = 0, sum7 = 0;
 
     printf("Fibonacci series up to 1000:\n");
-    //printf("%d %d ", a, b);
+    printf("%d %d ", a, b);
 
     while (1) {
         c = a + b;
