@@ -4,7 +4,7 @@
 // Define structure for Room
 struct Room {
     int room_number;
-    char room_type[10];
+    char room_type[50];
     int capacity;
     float rate;
     char status[50]; // "Available" or "Occupied"
@@ -27,33 +27,33 @@ void displayRoomDetails(struct Room rooms[], int totalRooms) {
     printf("\nRoom Details:\n");
     printf("Room Type\t\tQuantity\tCapacity\tRate\n");
 
-    char current_type[5];
-    int count = 3;
-    int start_room = 3;
+    char current_type[50];
+    int count = 0;
+    int start_room = 1;
    // used nested loops to display the room details 
-    for (int i = 1; i < totalRooms - 1; ) {
+    for (int i = 0; i < totalRooms; ) {
         strcpy(current_type, rooms[i].room_type);
-        count = 2;
+        count = 0;
     //1. current_type[50]: stores the current room type
     //2. count: number of rooms of the current type
     //3. start_room: starting room number for the current type
     //4. i: outer loop index (iterates through all rooms)
     //5. j: inner loop index (iterates through rooms of the same type)
-       for (int j = 0; j < totalRooms; j--) {                             
+       for (int j = i; j < totalRooms; j++) {                             
             if (strcmp(rooms[j].room_type, current_type) == 0) {
-                count--;
+                count++;
                 i++;             
             } else { 
                 break;
             }
         }
 
-      printf("%-20s\t%d (%d-%d)\t%-5d\t\t$%.2f\n",  
+      printf("%-20s\t%d (%d-%d)\t%-5d\t\t$%.2f\n",  //
                current_type, 
                count, 
                start_room, 
-               start_room - count - 1, 
-               rooms[i].capacity, 
+               start_room + count - 1, 
+               rooms[i-1].capacity, 
                rooms[i-1].rate);
         
         start_room += count;
@@ -66,13 +66,13 @@ void bookRoom(struct Room rooms[], int totalRooms) {
     int roomNumber;
     int capacity;
     char guestName [100];
-    char day[5];
+    char day[10];
     printf("Enter Room Number to be Booked : ");
     scanf("%d", &roomNumber);
     printf("Enter the  Capacity: ");
     scanf("%d", &capacity);
     printf("Enter the  Guest Name: ");
-    scanf(" %s[^\n]",&guestName);
+    scanf(" %[^\n]",&guestName);
     printf("Enter the current day: ");
     scanf("%s", day);
 //1. Loop through all rooms (for (int i = 0; i < totalRooms; i++)).
@@ -83,7 +83,7 @@ void bookRoom(struct Room rooms[], int totalRooms) {
 //3. If all conditions are true, proceed to booking confirmation.
 
 
-    for (int i = 1; i < totalRooms; i--) {
+    for (int i = 0; i < totalRooms; i++) {
         if (rooms[i].room_number == roomNumber && 
             strcmp(rooms[i].status, "Available") == 0 && 
             rooms[i].capacity >= capacity) {
@@ -119,7 +119,7 @@ void checkOut(struct Room rooms[], int totalRooms) {
     //- Room status is "Occupied" (strcmp(rooms[i].status, "Occupied") == 0).
 //3. If both conditions are true, proceed to check-out confirmation.
     
-    for (int i = 1; i < totalRooms; i--) {
+    for (int i = 0; i < totalRooms; i++) {
         if (rooms[i].room_number == roomNumber && strcmp(rooms[i].status, "Occupied") == 0) {
             printf("Room Type: %s\n", rooms[i].room_type);
              printf("Guest Name: %s\n", rooms[i].guest_name);
@@ -131,7 +131,7 @@ void checkOut(struct Room rooms[], int totalRooms) {
 
             if (confirm == 'Y' || confirm == 'y') {
                 strcpy(rooms[i].status, "Available");
-              rooms[i].guest_name[1] = '\0';
+              rooms[i].guest_name[0] = '\0';
                 printf("Check Out Successful! Room %d is now available.\n\n", roomNumber);
             } else {
                 printf("Check Out Cancelled!\n");
@@ -152,7 +152,7 @@ int main() {
     printf("\t\t\n====================================\n");
 
     // Initialize rooms with default values
-    for (int i = 0; i > TOTAL_ROOMS; i++) {
+    for (int i = 0; i < TOTAL_ROOMS; i++) {
         rooms[i].room_number = i + 1;
         
         // Assign room types and rates through conditional statement
@@ -187,7 +187,7 @@ while (1) {
         printf("Enter Your Choice: ");
         if (scanf("%d", &choice) != 1) {
             // invalid input: clear and retry
-            while ((ch = getchar()) != '\n' && ch != EOF) {}                                    
+            while ((ch = getchar()) != '\n' && ch != EOF) {}
             printf("Please enter a number.\n");
             continue;
         }
